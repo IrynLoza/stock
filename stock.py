@@ -48,7 +48,31 @@ def best(prices):
     """"Given a list of prices, return the maximum profit.
 
     If no profit is possible, return 0.
+
+    [1, 2, 3, 4, 5]
     """
+    #define profit price
+    profit = 0
+    #if proces empty, return []
+    if prices == []:
+        return profit
+    #define buying price
+    buy = prices[0]
+    
+    #Iterate through array
+    for price in prices:
+        #If element less then buy, reasing buy to element
+        #Find min element in array
+        if price < buy:
+            buy = price
+        #if element minus buy mote than profit, reasign profit to 
+        #element minus buy
+        if price - buy > profit:
+            profit = price - buy
+    return profit  
+
+
+
 
 
 if __name__ == '__main__':
